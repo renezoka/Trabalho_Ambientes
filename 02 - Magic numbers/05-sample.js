@@ -2,23 +2,33 @@ function calcularSalarioFuncionario(horasTrabalhadas, valorHora, cargo) {
     const salarioBase = horasTrabalhadas * valorHora;
 
     let salarioComBonus;
+    let bonusGerente = 1000
+    let bonusSupervisor = 500
+    let bonusEmpregado = 200
     if (cargo === 'gerente') {
-        salarioComBonus = salarioBase + 1000;
+        salarioComBonus = salarioBase + bonusGerente;
     } else if (cargo === 'supervisor') {
-        salarioComBonus = salarioBase + 500;
+        salarioComBonus = salarioBase + bonusSupervisor;
     } else {
-        salarioComBonus = salarioBase + 200;
+        salarioComBonus = salarioBase + bonusEmpregado;
     }
 
-    const salarioComDesconto = salarioComBonus - 300;
+    let descontoNoSalario = 300
+    const salarioComDesconto = salarioComBonus - descontoNoSalario;
 
     let salarioFinal;
-    if (salarioComDesconto > 5000) {
-        salarioFinal = salarioComDesconto - (salarioComDesconto * 0.27);
-    } else if (salarioComDesconto > 3000) {
-        salarioFinal = salarioComDesconto - (salarioComDesconto * 0.18);
+    let parametroSalarialAlto = 5000;
+    let parametroSalarialBaixo = 3000;
+    
+    if (salarioComDesconto > parametroSalarialAlt0) {
+        let taxaSalarial = 0.27;
+        salarioFinal = salarioComDesconto - (salarioComDesconto * taxaSalarial);
+    } else if (salarioComDesconto > parametroSalarialBaixo) {
+        let taxaSalarial = 0.18;
+        salarioFinal = salarioComDesconto - (salarioComDesconto * taxaSalarial);
     } else {
-        salarioFinal = salarioComDesconto - (salarioComDesconto * 0.11);
+        let taxaSalarial = 0.11;
+        salarioFinal = salarioComDesconto - (salarioComDesconto * taxaSalarial);
     }
 
     return salarioFinal;
