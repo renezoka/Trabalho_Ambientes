@@ -1,6 +1,7 @@
-let fcr = function(a, b) {
-    return a + b;
+let soma = function(number01, number02) {
+    return number01 + number02;
 }
 
-let rsl = fcr(3, 5);
-console.log(rsl);
+let result = soma(3, 5);
+console.log(result);
+
