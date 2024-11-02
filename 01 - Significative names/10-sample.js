@@ -1,10 +1,10 @@
 let usuarioObjeto = {
-    n: "João",
-    i: 25
+    nome: "João",
+    idade: 25
 };
 
-function exUsr(o) {
-    console.log(o.n + " tem " + o.i + " anos.");
+function exUsuario(objeto) {
+    console.log(ojeto.nome + " tem " + obejeto.idade + " anos.");
 }
 
-exUsr(usuarioObjeto);
+exUsuario(usuarioObjeto);
