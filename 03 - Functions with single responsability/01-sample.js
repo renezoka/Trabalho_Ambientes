@@ -1,22 +1,17 @@
-const resposta = await fetch('https://swapi.dev/api/starships/9/');
-const nave = await resposta.json();
+async function buscarEDetalharNave() {
+    try {
+        const resposta = await fetch('https://swapi.dev/api/starships/9/');
+        const nave = await resposta.json();
 
-const detalhesNave = `
+        const detalhesNave = `
         Nome: ${nave.name}
         Modelo: ${nave.model}
         Fabricante: ${nave.manufacturer}
         `;
 
-async function buscarNave(){
-    try{
-    console.log("Detalhes da Nave:");
-    console.log(detalhesNave);
-    }catch(erro)
-        console.log('Erro ao buscar nave')
-}
+        console.log("Detalhes da Nave:");
+        console.log(detalhesNave);
 
-async function detalharNave() {
-    try {
         const tamanhoTripulacao = parseInt(nave.crew);
         if (tamanhoTripulacao > 100) {
             console.log('Esta é uma nave grande.');
@@ -25,9 +20,8 @@ async function detalharNave() {
         }
 
     } catch (erro) {
-        console.error('Erro ao detalhar da nave:', erro);
+        console.error('Erro ao buscar detalhes da nave:', erro);
     }
 }
 
-buscarNave();
-detalharNave();
+buscarEDetalharNave();
